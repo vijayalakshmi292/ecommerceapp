@@ -25,7 +25,7 @@ this.seller.reloadSeller()
   }
 
   Login(data: SignUp): void { 
-    console.warn(data);
+    //console.warn(data);
     this.seller.userLogin(data)
   }
   OpenLogin()
