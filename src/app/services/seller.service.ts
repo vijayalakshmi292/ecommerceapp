@@ -18,16 +18,16 @@ export class SellerService {
       if(result){
 
       localStorage.setItem('seller',JSON.stringify(result.body))
-      this.router.navigate(['seller-home'])
-      //this.router.navigate(['seller-auth'])
+      //this.router.navigate(['seller-home'])
+      this.router.navigate(['seller-auth'])
       }
     })
   }
     reloadSeller(){
       if(localStorage.getItem('seller')){
         this.isSellerLoggedIn.next(true)
-         this.router.navigate(['seller-home']);
-        //this.router.navigate(['seller-auth'])
+        // this.router.navigate(['seller-home']);
+        this.router.navigate(['seller-auth'])
       }
     }
     userLogin(data:Login){
