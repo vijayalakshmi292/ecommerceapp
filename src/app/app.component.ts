@@ -8,8 +8,3 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ecommerce-app';
 }
-//   constructor(private seller:SellerService){
-
-//   }
-
-// }
