@@ -11,10 +11,12 @@ import { SignUp } from '../data.type';
 
 export class SellerAuthComponent implements OnInit
 {
+  showLogin=false;
+  authError :string=' ';
   constructor(private seller:SellerService)
    
   {}
-  showLogin=false
+  
 ngOnInit():void{
 this.seller.reloadSeller()
   }
@@ -24,10 +26,24 @@ this.seller.reloadSeller()
   this.seller.userSignUp(data);
   }
 
-  Login(data: SignUp): void { 
-    //console.warn(data);
-    this.seller.userLogin(data)
-  }
+//   Login(data: SignUp): void { 
+//     //console.warn(data);
+//     this.seller.userLogin(data);
+//     this.seller.isLoginError.subscribe((isError)=>{
+//       if(isError ){
+// this.authError="Email or password is incorrect";
+//       }
+//     })
+//   }
+Login(data: SignUp): void {
+  this.seller.userLogin(data);
+  this.seller.isLoginError.subscribe((isError) => {
+    if (isError) {
+      this.authError = "Email or password is incorrect";
+    }
+  });
+}
+
   OpenLogin()
   {
     this.showLogin=true

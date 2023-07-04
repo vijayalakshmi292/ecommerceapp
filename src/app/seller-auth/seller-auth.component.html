@@ -20,11 +20,12 @@
     <div *ngIf="showLogin" class="Login">
 
         <h1>Seller Login</h1>
+        <p>{{authError}}</p>
         <form #sellerLogin="ngForm" (ngSubmit)="Login(sellerLogin.value)" class="common-form">
 
-            <input  class="form-input" type="text"  ngmodel name="Email"  placeholder="Enter Email"  />
+            <input  class="form-input" type="Text" ngModel name="Email"  placeholder="Enter Email"  />
 
-            <input  class="form-input" type="password"  ngmodel  name="Password" placeholder="Enter Password"  />
+            <input class="form-input"  type="Password"  ngModel name="Password" placeholder="Enter Password"   />
 
             <button class="form-button">Login</button>
             <a class="auth-toggle-link" (click)="openSignUp()">Don't Have Account?Click to Sign-Up</a>
